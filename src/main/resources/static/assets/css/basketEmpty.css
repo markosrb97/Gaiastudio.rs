@@ -82,11 +82,19 @@
 .basket p {
   text-align: center;
   padding: 50px;
+  font-size: 25px;
+  color: #87807c;
+  font-family: 'Playfair Display', serif;
 }
 
 
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 900px) {
+
+  .body-style {
+    height: unset;
+  }
+
   .container {
     width: 100%;
   }
@@ -97,10 +105,12 @@
 
   .basket p {
     padding: 25px;
+
   }
 
   .basket-container {
     padding: 10px;
+    margin-bottom: 100px;
   }
 
 

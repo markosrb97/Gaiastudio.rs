@@ -17,7 +17,7 @@
   background: white;
 }
 
-.cart a{
+.cart a {
   color: var(--nav-text-color);
 }
 
@@ -27,6 +27,7 @@
 }
 
 .body-style {
+  height: 100vh;
   background-color: #f1eee7;
   display: flex;
   align-content: center;
@@ -157,6 +158,10 @@ hr {
   border: none;
 }
 
+.hr-mobile {
+  display: none;
+}
+
 .kolicina {
   display: flex;
   justify-content: space-between;
@@ -206,7 +211,11 @@ input[type="number"] {
   transition: 0.4s;
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 900px) {
+
+  .body-style {
+    height: unset;
+  }
 
   .container {
     width: auto;
@@ -225,6 +234,10 @@ input[type="number"] {
   .left {
     display: block;
     flex-basis: 100%;
+  }
+
+  .hr-mobile {
+    display: block;
   }
 
   .opis-i-cena {
@@ -248,6 +261,24 @@ input[type="number"] {
     position: unset;
     display: inline;
     margin-left: 5px;
+  }
+
+  .kolicina-i-dugme {
+    display: block;
+  }
+
+  .kolicina {
+    justify-content: unset;
+    margin-bottom: 20px;
+  }
+
+  .dugme {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .dugme button {
+    width: 200px;
   }
 
 

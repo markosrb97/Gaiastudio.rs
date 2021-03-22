@@ -50,7 +50,7 @@
   text-decoration: none;
   color: #ffffff;
   padding: 0px 15px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 2px;
   font-weight: 300;
   text-transform: uppercase;
@@ -108,7 +108,7 @@
 .cart {
   position: absolute;
   right: 15%;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 2px;
   font-weight: 300;
   text-transform: uppercase;
@@ -246,7 +246,7 @@ footer {
   padding: 10px 0px;
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 900px) {
 
   /* Navigation css*/
   #logo {
@@ -305,7 +305,7 @@ footer {
     position: absolute;
     top: 0;
     right: 0;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
     font-weight: 300;
     text-transform: uppercase;
@@ -314,7 +314,7 @@ footer {
   }
 
   .cart-mobile a {
-    font-family: "Oswald", sans-serif;
+    font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
     font-weight: 300;
     text-transform: uppercase;

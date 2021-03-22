@@ -4,7 +4,7 @@ showSlides();
 
 /* Update za mobile */
 $(window).resize(function() {
-  if( $(this).width() > 770 ) {
+  if( $(this).width() > 900 ) {
     document.getElementById('menu-list').removeAttribute("style");
   }
 });

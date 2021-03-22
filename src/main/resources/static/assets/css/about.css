@@ -37,6 +37,9 @@
     margin: 0 auto;
     width: 1000px;
     padding-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #87807c;
+
 }
 
 .shop-naslov {
@@ -93,10 +96,11 @@
     font-weight: 400;
     letter-spacing: 0.15em;
     margin-bottom: 20px;
+    font-family: "Raleway", sans-serif;
 }
 
 .text-1 {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 34px;
     max-width: 70%;
     margin: 0 auto 50px;
@@ -109,7 +113,7 @@
 .text-2 {
     max-width: 90%;
     margin: 40px auto;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
     letter-spacing: .5px
 }
