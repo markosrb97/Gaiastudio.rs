@@ -91,7 +91,7 @@
 								<span th:text="${item.quantity} * ${item.candle.price}"> </span> RSD
 							</td>
 							<td class="ukloni-proizvod">
-								<a href="#"><img th:src="@{/assets/images/iconmonstr-x-mark-thin.svg}"></a>
+								<a th:href="@{${'/cart/remove-item/'+item.candle.id'}}"><img th:src="@{/assets/images/iconmonstr-x-mark-thin.svg}"></a>
 							</td>
 						</tr>
 					</tbody>

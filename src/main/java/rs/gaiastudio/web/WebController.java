@@ -176,6 +176,9 @@ public class WebController {
 			cart = (Cart) session.getAttribute("cart");
 			cart.removeItem(candleItem);
 			session.setAttribute("cart", cart);
+                        if(cart.size() < 1){
+                            return "redirect:/cart";
+                        }
 		}
 		
 		
