@@ -12,11 +12,11 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 import rs.gaiastudio.model.Candle;
@@ -26,6 +26,7 @@ import rs.gaiastudio.model.Contact;
 import rs.gaiastudio.model.Customer;
 import rs.gaiastudio.model.Order;
 import rs.gaiastudio.repo.CandleRepository;
+import rs.gaiastudio.security.CaptchaValidator;
 
 
 @Controller
@@ -39,6 +40,8 @@ public class WebController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
+        
+        private String captchaMessage;
 	
 	@GetMapping("/")
 	public String getHome(Model model, HttpSession session) {
@@ -65,16 +68,22 @@ public class WebController {
 			Cart temp = new Cart();
 			model.addAttribute("cart", temp);
 		}
-		
+		model.addAttribute("message", captchaMessage);
 		model.addAttribute("customer", new Customer());
 		return "orderForm";
 	}
 	
 	@PostMapping("/order")
-	public String submitOrder(@ModelAttribute Customer customer, Model model, HttpSession session) {
+	public String submitOrder(@ModelAttribute Customer customer, Model model, HttpSession session, @RequestParam(name="g-recaptcha-response") String captchaResponse) {
 		Order order = new Order(customer);
-		//model.addAttribute("order", order);
 		
+		CaptchaValidator captchaValidator = new CaptchaValidator();
+                
+                if(!captchaValidator.validateCaptcha(captchaResponse)){
+                    captchaMessage = "please validate reCAPTCHA";
+                    return "/order";
+                }
+                
 		SimpleMailMessage msg = new SimpleMailMessage();
 		//adresa na koju ce da se salje mejl za svaki order
 		msg.setTo("janiobrad@gmail.com");
@@ -105,7 +114,7 @@ public class WebController {
 			model.addAttribute("cart", temp);
 		}
 
-		candles = new ArrayList<Candle>();
+		candles = new ArrayList<>();
 		candles = products.findAll();
 		model.addAttribute("candles", candles);
 		
@@ -147,7 +156,7 @@ public class WebController {
 	@PostMapping("/cart/add-item/{id}")
 	public String addToCart(@ModelAttribute CartItem item, Model model, @PathVariable long id, HttpSession session) {
 		
-		candles = new ArrayList<Candle>();
+		candles = new ArrayList<>();
 		candles = products.findAll();
 		Candle candle =  candles.get((int) id);
 		CartItem candleItem = new CartItem(candle);
@@ -164,24 +173,23 @@ public class WebController {
 		
 		return "redirect:/cart";
 	}
-	
-	@DeleteMapping("/cart/remove-item/{id}")
-	public String removeFromCart(Model model, @PathVariable long id, HttpSession session) {
-		
-		candles = new ArrayList<Candle>();
+
+        @GetMapping("/cart/remove-item/{id}")
+	public String getRemoveFromCart(Model model, @PathVariable long id, HttpSession session) {
+		candles = new ArrayList<>();
 		candles = products.findAll();
 		Candle candle = candles.get((int) id);
 		CartItem candleItem = new CartItem(candle);
+                candles.remove((int)id);
 		if(session.getAttribute("cart") != null) {
 			cart = (Cart) session.getAttribute("cart");
-			cart.removeItem(candleItem);
-			session.setAttribute("cart", cart);
-                        if(cart.size() < 1){
-                            return "redirect:/cart";
+                        if(cart.size() == 1){
+                            session.removeAttribute("cart");
+                        }else{
+                            cart.removeCandleId(id+1);
+                            session.setAttribute("cart", cart); 
                         }
 		}
-		
-		
 		return "redirect:/cart";
 	}
 	

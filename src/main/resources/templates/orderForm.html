@@ -71,6 +71,7 @@
 			<div class="podaci-i-cena">
 				<div class="left">
 					<div class="forma">
+						<h1 th:text="${message} ?: ''" ></h1>
 						<form th:action="@{/order}" th:object="${customer}" method="POST">
 							<h2 class="porudzbina-title">Detalji za porudžbinu</h2>
 							<div class="razmak">
@@ -83,6 +84,9 @@
 							<input class="broj-tel" type="text" placeholder="Broj telefona" th:field="*{telNumber}">
 							<textarea class="napomena" maxlength="500" placeholder="Napomena (nije obavezno)" oninput="maxWords()" th:field="*{note}"></textarea>
 							<p class="poruka">Preostalo vam je još <span class="duzina-poruke">500</span> karaktera.</p>
+
+							<div class="g-recaptcha" data-sitekey="6LcEwrYaAAAAALdyhafWqPFvmnV106JtFCqu_lpU"></div>
+
 							<div class="naruci">
 								<input class="btn" type="submit" value="Naruči">
 								<a th:href="@{/cart}">&lt; Nazad u korpu</a>
@@ -140,6 +144,7 @@
 
 	<script th:src="@{/assets/js/jquery-3.5.1.min.js}"></script>
 	<script th:src="@{assets/js/orderForm.js}"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 

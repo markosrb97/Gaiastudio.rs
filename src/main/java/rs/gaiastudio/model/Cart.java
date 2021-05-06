@@ -38,12 +38,14 @@ public class Cart extends ArrayList<CartItem>{
 	
 	
 	public void removeItem(CartItem item) {
-		if(this.contains(item)) {
-			this.get(this.indexOf(item)).setQuantity(0);
-			this.remove(item);
+            String candleType = item.getCandle().getType();
+		if(this.containsCandle(candleType)) {
+			long id = this.indexOfCandle(candleType);
+			
 		}
 		numberOfItems--;
 	}
+        
 	
 	// returns true if candle of passed type is found, otherwise returns false
 	public boolean containsCandle(String candleType) {
@@ -66,5 +68,10 @@ public class Cart extends ArrayList<CartItem>{
 		return -1;
 	}
 	
+        public void removeCandleId(long id){
+            this.get((int)(id-1)).setQuantity(this.get((int)(id-1)).getQuantity()-1);
+            this.numberOfItems -= 1;
+            this.removeIf(e -> e.getCandle().getId() == id);
+        }
 
 }

@@ -30,7 +30,6 @@
   background-color: #f1eee7;
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
 .container {
@@ -189,6 +188,25 @@ td {
 .ukupna-cena-dole {
   font-size: 23px;
 }
+
+@media only screen and (min-width: 1920px) {
+  .body-style {
+    height: 1000px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .body-style {
+    height: 1440px;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  .body-style {
+    height: 2160px;
+  }
+}
+
 
 @media only screen and (max-width: 900px) {
   .body-style {
