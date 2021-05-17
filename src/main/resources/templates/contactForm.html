@@ -75,6 +75,7 @@
                         <div class="right">
                             <form th:action="@{/contact}" method="POST" th:object="${contact}">
                                 <div class="ime-i-email">
+                                  <!-- ako su obavezna polja prazna -> nemoj da saljes -->
                                     <div class="ime">
                                         <label>VAŠE IME<sup>*</sup></label>
                                         <input type="text" th:field="*{name}">
@@ -94,6 +95,7 @@
                                     <p>Preostalo vam je još <span class="broj-reci">1000</span> karaktera.</p>
                                     <input class="posalji" type="submit" value="POŠALJI">
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6LcEwrYaAAAAALdyhafWqPFvmnV106JtFCqu_lpU"></div>
                             </form>
                         </div>
                     </div>
@@ -127,6 +129,7 @@
 	<script th:src="@{/assets/js/jquery-3.5.1.min.js}"></script>
   <script th:src="@{/assets/js/main.js}"></script>
   <script th:src="@{/assets/js/contactForm.js}"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>

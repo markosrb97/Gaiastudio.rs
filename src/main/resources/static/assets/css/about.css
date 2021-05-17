@@ -100,10 +100,11 @@
 }
 
 .text-1 {
+    text-align: justify;
     font-size: 20px;
     line-height: 34px;
     max-width: 70%;
-    margin: 0 auto 50px;
+    margin: 0 auto 20px;
 }
 
 .gornji-deo img {
@@ -111,8 +112,9 @@
 }
 
 .text-2 {
+    text-align: justify;
     max-width: 90%;
-    margin: 40px auto;
+    margin: 15px auto;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: .5px
@@ -135,7 +137,6 @@
 }
 
 .text p {
-    margin: 0;
     max-width: 100%;
 }
 

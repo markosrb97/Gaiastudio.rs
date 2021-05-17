@@ -81,7 +81,7 @@ public class WebController {
                 
                 if(!captchaValidator.validateCaptcha(captchaResponse)){
                     captchaMessage = "please validate reCAPTCHA";
-                    return "/order";
+                    return "redirect:/order";
                 }
                 
 		SimpleMailMessage msg = new SimpleMailMessage();
@@ -208,7 +208,7 @@ public class WebController {
 	}
         
         @PostMapping("/contact")
-        public String contactPost(@ModelAttribute Contact contact, Model model, HttpSession session){
+        public String contactPost(@ModelAttribute Contact contact, Model model, HttpSession session, @RequestParam(name="g-recaptcha-response") String captchaResponse){
             
             if(session.getAttribute("cart") != null){
                 cart = (Cart) session.getAttribute("cart");
@@ -218,6 +218,13 @@ public class WebController {
                 model.addAttribute("cart", temp);
             }
             
+            CaptchaValidator captchaValidator = new CaptchaValidator();
+                
+            if(!captchaValidator.validateCaptcha(captchaResponse)){
+                captchaMessage = "please validate reCAPTCHA";
+                return "redirect:/contact";
+            }
+            System.out.println("\n\n" + captchaResponse);
             /*
             SimpleMailMessage msg = new SimpleMailMessage();
             //adresa na koju ce da se salje mejl za svaki order
