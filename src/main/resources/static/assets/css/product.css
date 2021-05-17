@@ -1,0 +1,315 @@
+@import url("colors.css");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navigation-container ul li a {
+  color: var(--nav-text-color);
+}
+
+.navigation-container {
+  position: relative;
+}
+
+.img-logo {
+  background: white;
+}
+
+.cart a {
+  color: var(--nav-text-color);
+}
+
+.broj-proizovda {
+  border-color: var(--nav-text-color);
+  color: var(--nav-text-color);
+}
+
+.body-style {
+  height: 100vh;
+  background-color: #f1eee7;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.container {
+  width: 1000px;
+  height: auto;
+}
+
+.shop-naslov {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #a8a19b;
+  letter-spacing: 4px;
+  margin-top: 100px;
+}
+
+.shop-naslov:before,
+.shop-naslov:after {
+  content: "";
+  border-bottom: 1px solid #a8a19b;
+  margin: auto;
+  width: 30px;
+}
+
+.shop-naslov:before {
+  margin-right: 10px;
+}
+
+.shop-naslov:after {
+  margin-left: 10px;
+}
+
+.naslov-proizvoda {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.naslov-proizvoda p {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: #87807c;
+  font-style: italic;
+}
+
+.proizvod {
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.left {
+  flex-basis: 50%;
+}
+
+.slika {
+  width: 100%;
+}
+
+.slika img {
+  height: 100%;
+  width: 95%;
+  border: 7px solid white;
+}
+
+.right {
+  flex-basis: 50%;
+}
+
+.opis {
+  font-family: "Playfair Display", serif;
+  color: #675c53;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.opis p {
+  padding: 0 20px 20px 0;
+}
+
+.opis-i-cena {
+  padding: 20px 0 0 45px;
+}
+
+.cena {
+  width: 100%;
+  margin: 15px 0 4px 0;
+}
+
+.cena-naslov {
+  font-family: "Raleway", sans-serif;
+  color: #a8a19b;
+  font-size: 20px;
+}
+
+.cena-broj {
+  font-family: "Playfair Display", serif;
+  color: #87807c;
+  font-size: 14px;
+  display: block;
+  position: relative;
+  bottom: 10px;
+}
+
+.cena-broj span {
+  font-size: 33px;
+}
+
+.kolicina-i-dugme {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+}
+
+hr {
+  margin: 0 auto;
+  height: 1px;
+  background-color: #a8a19b;
+  border: none;
+}
+
+.hr-mobile {
+  display: none;
+}
+
+.kolicina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kolicina input {
+  width: 40px;
+  height: 40px;
+  border: 0 none;
+  margin-left: 25px;
+  font-family: "Playfair Display", serif;
+  color: #a8a19b;
+  font-size: 30px;
+  text-align: center;
+}
+
+.kolicina input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+.dugme button {
+  height: 40px;
+  width: 130px;
+  color: #f1eee7;
+  background-color: #a8a19b;
+  font-family: "Playfair Display", serif;
+  border: none;
+  font-size: 17px;
+}
+
+.dugme button:hover {
+  background-color: #87807c;
+  transition: 0.4s;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .body-style {
+    height: unset;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .proizvod {
+    max-width: 500px;
+    display: block;
+  }
+
+  .right {
+    display: block;
+    width: 100%;
+  }
+
+  .left {
+    display: block;
+    flex-basis: 100%;
+  }
+
+  .hr-mobile {
+    display: block;
+  }
+
+  .opis-i-cena {
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  .cena {
+    margin: 0 0 13px 0;
+  }
+
+  .cena-naslov {
+    display: inline;
+  }
+
+  .cena-broj {
+    position: unset;
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .kolicina-i-dugme {
+    display: block;
+  }
+
+  .kolicina {
+    justify-content: unset;
+    margin-bottom: 20px;
+  }
+
+  .dugme {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .dugme button {
+    width: 200px;
+  }
+
+
+}
+
+@media only screen and (max-width: 440px) {
+  .container {
+    width: auto;
+  }
+
+  .proizvod {
+    max-width: 300px;
+    display: block;
+  }
+
+  .opis {
+    text-align: left;
+  }
+
+  .cena {
+    margin: 0 0 13px 0;
+  }
+
+  .cena-naslov {
+    display: inline;
+  }
+
+  .cena-broj {
+    position: unset;
+    display: inline;
+    margin-left: 5px;
+  }
+
+}

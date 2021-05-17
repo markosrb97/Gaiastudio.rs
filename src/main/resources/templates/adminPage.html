@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gaia Studio | Admin</title>
+    <link rel="stylesheet" th:href="@{/assets/css/adminPage.css}"/>
+</head>
+<body>
+    <div class="container">
+        <a th:href="@{/admin/add}" class="dodaj">Dodaj nov proizvod</a>
+        <div class="product" th:each="candle : ${candles}">
+            <div class="slika-preview">
+                <img class="sveca-preview" th:src="@{${'/assets/images/1/'+candle.type+'.jpg'}}">
+                <p class="naslov-proizvoda" th:text="${candle.type}"> </p>
+                <p class="cena-proizvoda"><span class="cena" th:text="${candle.price}"> </span> RSD</p>
+            </div>
+            <div class="opis">
+                    <p th:text="${candle.description}"> </p>
+                    
+                    <form class="linkovi" method="POST" th:action="@{${'admin/remove/'+candle.id}}">
+                        <a th:href="@{${'/admin/edit/'+candle.id}}" ><button class="izmeni"> Izmeni </button></a>
+                        <button class="obrisi" type="submit">Obriši</button>
+                    </form>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

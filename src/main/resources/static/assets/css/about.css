@@ -1,0 +1,178 @@
+@import url("colors.css");
+
+/* Body */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navigation css*/
+.navigation-container ul li a {
+    color: var(--nav-text-color);
+}
+
+.navigation-container {
+    position: relative;
+}
+
+.img-logo {
+    background-color: white;
+}
+
+.broj-proizovda {
+    border-color: var(--nav-text-color);
+    color: var(--nav-text-color);
+}
+
+.cart a {
+    color: var(--nav-text-color);
+}
+
+.body-style {
+    background-color: #f1eee7;
+}
+
+.container {
+    overflow: auto;
+    margin: 0 auto;
+    width: 1000px;
+    padding-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #87807c;
+
+}
+
+.shop-naslov {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    color: #a8a19b;
+    letter-spacing: 4px;
+    margin-top: 100px;
+}
+
+.shop-naslov:before,
+.shop-naslov:after {
+    content: "";
+    border-bottom: 1px solid #a8a19b;
+    margin: auto;
+    width: 30px;
+}
+
+.shop-naslov:before {
+    margin-right: 10px;
+}
+
+.shop-naslov:after {
+    margin-left: 10px;
+}
+
+.about-container {
+    background: white;
+    padding: 25px;
+}
+
+.inner-container {
+    border: 1px solid #a8a19b;
+    padding: 50px;
+
+}
+
+.inner-container p {
+    display: inline-block;
+}
+
+
+.gornji-deo {
+    text-align: center;
+    border-bottom: 1px solid #a8a19b;
+}
+
+.naslov {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    font-family: "Raleway", sans-serif;
+}
+
+.text-1 {
+    text-align: justify;
+    font-size: 20px;
+    line-height: 34px;
+    max-width: 70%;
+    margin: 0 auto 20px;
+}
+
+.gornji-deo img {
+    width: 100%;
+}
+
+.text-2 {
+    text-align: justify;
+    max-width: 90%;
+    margin: 15px auto;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: .5px
+}
+
+.donji-deo {
+    margin-top: 3px;
+    border-top: 1px solid #a8a19b;
+    padding-top: 50px;
+}
+
+.donji-deo img {
+    width: 30%;
+}
+
+.text {
+    text-align: left;
+    width: 60%;
+    float: right;
+}
+
+.text p {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .inner-container {
+        border: none;
+        padding: 0;
+    }
+
+    .text-1 {
+        max-width: 100%;
+    }
+
+    .text-2 {
+        max-width: 100%;
+    }
+
+    .donji-deo img {
+        display: block;
+        float: none;
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    .text {
+        max-width: 100%;
+        width: auto;
+        float: none;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+}

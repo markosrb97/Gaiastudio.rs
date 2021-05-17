@@ -1,0 +1,481 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  width: auto;
+  height: 150px;
+  background: url(../images/Ostalo/header_slika2.jpeg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-header {
+  width: 1000px;
+}
+
+.logo-header img {
+  height: 110px;
+  width: 110px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+
+.body-style {
+  padding-top: 100px;
+  background-color: #f1eee7;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.podaci-i-cena {
+  max-width: 100%;
+  display: flex;
+  padding: 0 30px;
+}
+
+.left {
+  flex-basis: 55%;
+  padding-right: 30px;
+}
+
+.right {
+  flex-basis: 45%;
+  padding-left: 30px;
+  border-left: 1px solid #a8a19b;
+}
+
+.porudzbina-title {
+  font-weight: normal;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
+}
+
+.forma {
+  width: 100%;
+  border-bottom: 1px solid #a8a19b;
+  padding-bottom: 20px;
+}
+
+.forma input {
+  margin-bottom: 20px;
+  padding-left: 8px;
+  border: 1px solid #a8a19b;
+  border-radius: 5px;
+  height: 45px;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.forma input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #87807c;
+  transition: 0.2s;
+}
+
+.ime,
+.prezime {
+  width: 47%;
+}
+
+.ulica,
+.broj-tel {
+  width: 100%;
+}
+
+.grad {
+  width: 65%;
+}
+
+.zip-broj {
+  width: 30%;
+}
+
+.razmak {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.naruci {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.naruci a {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #a8a19b;
+}
+
+.naruci a:hover {
+  color: #87807c;
+}
+
+.naruci input {
+  height: 45px;
+  width: 100px;
+  padding-left: 0;
+  font-weight: 600;
+  color: #f1eee7;
+  background-color: #a8a19b;
+  cursor: pointer;
+}
+
+.naruci input:focus {
+  box-shadow: none;
+}
+
+.naruci input:hover {
+  background-color: #87807c;
+  transition: 0.4s;
+}
+
+.forma textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  padding: 8px 8px 0 8px;
+  border: 1px solid #a8a19b;
+  border-radius: 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.forma textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #87807c;
+  transition: 0.2s;
+}
+
+.prikaz-proizvoda {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #a8a19b;
+  padding-bottom: 20px;
+}
+
+.slika-proizvoda {
+  height: 70px;
+  width: 70px;
+  border: 0px solid #a8a19b;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-basis: 10%;
+}
+
+.badge {
+  height: 25px;
+  width: 25px;
+  border: 1px transparent black;
+  background-color: grey;
+  border-radius: 50%;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge p {
+  font-family: 'Playfair Display', serif;
+  color: #f1eee7;
+}
+
+.thumbnail-proizvod {
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.ime-i-cena {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 79%;
+  padding-left: 10px;
+}
+
+.ime-i-cena p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.cena-proizvoda span {
+  font-size: 20px;
+}
+
+.racun {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 30px 0;
+  border-bottom: 1px solid #a8a19b;
+}
+
+.racun p {
+  font-family: 'Playfair Display', serif;
+}
+
+.ukupna-cena {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.dostava-napomena {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.dostava-napomena p {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+  background-color: #a8a19b;
+  border-radius: 5px;
+  color: #f1eee7;
+}
+
+.dostava-napomena p::first-line {
+  text-indent: -6px;
+}
+
+.poruka,
+.duzina-poruke {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #87807c;
+  margin-bottom: 30px;
+}
+
+.napomena {
+  word-wrap: break-word;
+}
+
+/* update */
+.pregled-porudzbine {
+  max-width: 100%;
+  border-top: 1px solid #a8a19b;
+  border-bottom: 1px solid #a8a19b;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  display: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.pregled-porudzbine-meni {
+  width: 500px;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.left-side p {
+  margin-right: 7px;
+}
+
+.korpa {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.strelica-gore {
+  display: none;
+}
+
+.meni-spusten {
+  width: 100%;
+  border-bottom: 1px solid #a8a19b;
+  display: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.meni-spusten-slika-i-cena {
+  max-width: 500px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meni-spusten-slika {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  flex-basis: 10%;
+}
+
+.meni-spusten-slika img {
+  width: 65px;
+  border-radius: 10px;
+}
+
+.badge-kolicina {
+  height: 23px;
+  width: 23px;
+  background-color: grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  color: white;
+}
+
+.meni-spusten-ime-i-cena {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 90%;
+  padding-left: 12px;
+  padding-bottom: 7px;
+}
+
+hr {
+  max-width: 440px;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #a8a19b;
+  border: none;
+}
+
+.meni-spusten-ukupno {
+  max-width: 500px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meni-spusten-napomena {
+  max-width: 500px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 0 30px;
+}
+
+.meni-spusten-napomena p {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  padding: 10px 10px 10px 10px;
+  background-color: #a8a19b;
+  border-radius: 5px;
+  color: #f1eee7;
+}
+
+.meni-spusten-napomena p::first-line {
+  text-indent: -6px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .logo-header {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-header img {
+    margin: 0;
+  }
+
+  .body-style {
+    padding-top: 0;
+    height: unset;
+  }
+
+  .container {
+    max-width: 500px;
+    width: auto;
+    margin-bottom: 50px;
+  }
+
+  .podaci-i-cena {
+    display: block;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .left {
+    padding: 0;
+  }
+
+  .porudzbina-title {
+    margin-top: 50px;
+  }
+
+  .forma input {
+    display: block;
+    width: 100%;
+  }
+
+  .razmak {
+    display: block;
+  }
+
+  .razmak input {
+    display: block;
+  }
+
+  .naruci {
+    display: block;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .pregled-porudzbine {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  header {
+    height: 100px;
+  }
+
+  .logo-header img {
+    height: 90px;
+    width: 90px;
+  }
+}

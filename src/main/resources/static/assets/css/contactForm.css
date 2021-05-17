@@ -1,0 +1,295 @@
+@import url('colors.css');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navigation-container ul li a {
+  color: var(--nav-text-color);
+}
+
+.cart a {
+  color: var(--nav-text-color);
+}
+
+.img-logo {
+  background-color: white;
+}
+
+.broj-proizovda {
+  border-color: var(--nav-text-color);
+  color: var(--nav-text-color);
+}
+
+.body-style {
+  background-color: #f1eee7;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.navigation-container {
+  position: relative;
+}
+
+.container {
+  width: 1000px;
+  height: auto;
+}
+
+.shop-naslov {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #a8a19b;
+  letter-spacing: 4px;
+  margin-top: 100px;
+}
+
+.shop-naslov:before,
+.shop-naslov:after {
+  content: "";
+  border-bottom: 1px solid #a8a19b;
+  margin: auto;
+  width: 30px;
+}
+
+.shop-naslov:before {
+  margin-right: 10px;
+}
+
+.shop-naslov:after {
+  margin-left: 10px;
+}
+
+.contact-container {
+  background: white;
+  padding: 25px;
+}
+
+.contact-naslov {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+.contact-naslov p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #87807c;
+}
+
+.inner-container {
+  background: white;
+  border: 1px solid #a8a19b;
+  padding: 60px;
+}
+
+.contact-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.left {
+  flex-basis: 35%;
+  font-family: 'Playfair Display', serif;
+  color: #87807c;
+}
+
+.right {
+  display: flex;
+  flex-basis: 65%;
+}
+
+form {
+  width: 100%;
+}
+
+.ime {
+  display: inline-block;
+}
+
+.email {
+  float: right;
+}
+
+form label {
+  font-family: 'Playfair Display', serif;
+  color: #87807c;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input {
+  margin-bottom: 20px;
+  padding-left: 8px;
+  border: 1px solid #a8a19b;
+  height: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+form input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #87807c;
+  transition: 0.2s;
+}
+
+
+form textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  padding: 8px 8px 0 8px;
+  border: 1px solid #a8a19b;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  box-sizing: border-box;
+  word-wrap: normal;
+}
+
+.posalji {
+  height: 35px;
+  width: 90px;
+  font-weight: 300;
+  font-size: 13px;
+  color: #f1eee7;
+  padding-left: 0;
+  background-color: #a8a19b;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 0;
+}
+
+.posalji:focus {
+  box-shadow: none;
+}
+
+.posalji:hover {
+  background-color: #87807c;
+  transition: 0.4s;
+}
+
+.contact-us {
+  margin-bottom: 15px;
+}
+
+.contact-us a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  color: #87807c;
+}
+
+.contact-us p {
+  font-size: 16px;
+}
+
+.drustvene-mreze img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.left h3 {
+  padding-top: 4px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* update */
+.polje {
+  word-wrap: break-word;
+}
+
+.poruka p,
+.broj-reci {
+  font-family: 'Playfair Display', serif;
+  color: #87807c;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .body-style {
+    height: unset;
+  }
+
+  .container {
+    width: auto;
+    margin-bottom: 50px;
+  }
+
+  .contact-container {
+    max-width: 650px;
+  }
+
+  .inner-container {
+    padding: 30px;
+  }
+
+  .contact-form {
+    display: block;
+  }
+
+  .left {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  form div {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  form input {
+    width: 100%;
+  }
+
+  .ime,
+  .email {
+    display: block;
+    width: 100%;
+  }
+
+  .email {
+    float: none;
+  }
+
+  .posalji {
+    float: none;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 440px) {
+  .contact-container {
+    max-width: 100%;
+    padding: 0;
+
+  }
+
+  .inner-container {
+    padding: 20px 0;
+    border: none;
+  }
+
+  form div {
+    width: 80%;
+  }
+
+}

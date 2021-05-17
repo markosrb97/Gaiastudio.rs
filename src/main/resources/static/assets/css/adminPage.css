@@ -1,0 +1,99 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+    background-color: #f1eee7;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+  width: 1000px;
+
+  /* height: 1000px; */
+
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.container, .dodaj {
+  text-align: center;
+}
+
+.dodaj {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #f1eee7;
+  background-color: #a8a19b;
+  padding: 10px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.dodaj:hover{
+  background-color: #87807c;
+  transition: 0.4s;
+}
+
+
+.product {
+  padding: 10px;
+  display: flex;
+  border: 1px solid black;
+  background-color: #f1eee7;
+  margin-bottom: 20px;
+}
+.product img {
+  width: 300px;
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.slika-preview {
+  text-align: center;
+  margin-right: 50px;
+}
+
+.opis {
+  flex-basis: 60%;
+  padding-top: 30px;
+  position: relative;
+}
+
+.opis p {
+text-align: justify;
+margin-top: 5px;
+}
+
+.linkovi {
+  position: absolute;
+  width: auto;
+  right: 0;
+  bottom: 10px;
+}
+
+.linkovi button{
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #f1eee7;
+  background-color: #a8a19b;
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  border: none;
+}
+
+.linkovi button:hover{
+  background-color: #87807c;
+  transition: 0.4s;
+}
+
+.obrisi {
+  margin-left: 10px;
+}

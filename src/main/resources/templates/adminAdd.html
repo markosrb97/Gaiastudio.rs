@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gaia Studio | Admin</title>
+    <link rel="stylesheet" th:href="@{/assets/css/adminAdd.css}"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="product">
+
+        <form th:action="@{/admin/add}" enctype="multipart/form-data" method="POST" th:object="${candle}">
+          <div class="slika-preview">
+            <div class="slika"></div>
+            <input class="btn" type="file" placeholder="Dodaj sliku 1" name="file1"/>
+            <input class="btn" type="file" placeholder="Dodaj sliku 2" name="file2"/>
+            <input type="text" placeholder="Ime proizvoda" class="naslov-proizvoda" th:field="*{type}"/>
+            <input type="text" placeholder="Cena" class="cena-proizvoda" th:field="*{price}"/><span> RSD</span>
+          </div>
+          <div class="opis">
+            <textarea maxlength="500" placeholder="Opis proizvoda" th:field="*{description}"></textarea>
+            <input class="sacuvaj" type="submit" value="Sacuvaj" />
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </body>
+</html>

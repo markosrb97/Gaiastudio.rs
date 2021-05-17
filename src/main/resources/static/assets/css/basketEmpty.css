@@ -1,0 +1,117 @@
+@import url("colors.css");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navigation-container ul li a {
+  color: var(--nav-text-color);
+}
+
+.cart {
+  color: var(--nav-text-color);
+}
+
+.broj-proizovda {
+  border-color: var(--nav-text-color);
+}
+
+.navigation-container {
+  position: relative;
+}
+
+.body-style {
+  background-color: #f1eee7;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.img-logo {
+  background-color: white;
+}
+
+.container {
+  width: 1000px;
+  height: 100%;
+}
+
+.shop-naslov {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #a8a19b;
+  letter-spacing: 4px;
+  margin-top: 100px;
+}
+
+.shop-naslov:before,
+.shop-naslov:after {
+  content: "";
+  border-bottom: 1px solid #a8a19b;
+  margin: auto;
+  width: 30px;
+}
+
+.shop-naslov:before {
+  margin-right: 10px;
+}
+
+.shop-naslov:after {
+  margin-left: 10px;
+}
+
+.basket-container {
+  height: 300px;
+  background: white;
+  padding: 25px;
+}
+
+.basket {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #a8a19b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basket p {
+  text-align: center;
+  padding: 50px;
+  font-size: 25px;
+  color: #87807c;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+  .body-style {
+    height: unset;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .basket {
+    text-align: center;
+  }
+
+  .basket p {
+    padding: 25px;
+
+  }
+
+  .basket-container {
+    padding: 10px;
+    margin-bottom: 100px;
+  }
+
+
+}

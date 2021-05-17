@@ -1,36 +1,114 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		
-		<title>Gaia Studio | Candles | Mirišljave sveće | Prodaja sveća</title>
-		
-		<meta name="description" content=""/>
-		<meta name="keywords" content="Candles, Sveće, Prodaja sveća, Mirišljave sveće, Candles Shop " />
-		<meta name="author" content="Marko Radosavljević, Janko Obradović, Filip Andrić" />
-		<meta name="robots" content="NO INDEX, NO FOLLOW" />
-		
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet"> 
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/colors.css" />
-	</head>
-	<body>
-		<nav>
-			<div class="navigation-container">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Shop</a></li>
-					<li><a href="#"><img src="../assets/images/moj logo.png"/></a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">About</a></li>
-				</ul>
-			</div>
-		</nav>
-		<main>
-			
-		</main>
-		<script src="../assets/js/jquery-3.5.1.min.js"></script>
-		<script src="../assets/js/main.js"></script>
-	</body>
+  <html xmlns:th="https://www.thymeleaf.org"> 
+  <head>
+    <meta charset="utf-8" />
+    <title>Gaia Studio | Candles | Mirišljave sveće | Prodaja sveća</title>
+    <meta name="description" content="" />
+    <meta
+      name="keywords"
+      content="Candles, Sveće, Prodaja sveća, Mirišljave sveće, Candles Shop"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Marko Radosavljević, Janko Obradović, Filip Andrić"
+    />
+    <meta name="robots" content="NO INDEX, NO FOLLOW" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+		<link rel="stylesheet" th:href="@{/assets/css/colors.css}" />
+
+  </head>
+  <body class="main-body">
+    <header>
+      <nav>
+        <div class="navigation-container">
+          <div class="logo-mob">
+            <a th:href="@{/}"><img th:src="@{assets/images/moj logo.png}" class="img-logo-mob" /></a>
+          </div>
+          <ul class="d-flex" id="menu-list">
+            <li><a th:href="@{/}">Pоčetna</a></li>
+            <li><a th:href="@{/shop}">Shop</a></li>
+            <li id="logo">
+              <a th:href="@{/}"><img th:src="@{assets/images/moj logo.png}" class="img-logo" /></a>
+            </li>
+            <li><a th:href="@{/contact}">Kontakt</a></li>
+            <li><a th:href="@{/about}">O nama</a></li>
+            <div class="cart d-flex">
+              <a th:href="@{/cart}"><p>Korpa</p> </a>
+              <div class="broj-proizovda" th:text="${cart.numberOfItems}">  </div>
+            </div>
+          </ul>
+
+          <div class="menu-button" id="menu-button" onclick="menuShowHide()">
+            <img th:src="@{/assets/images/iconmonstr-menu-1-240.png}" />
+            <p>MENU</p>
+          </div>
+
+          <div class="cart-mobile">
+            <a th:href="@{/cart}"><p>Korpa</p> </a>
+            <div class="broj-proizovda" th:text="${cart.numberOfItems}"> </div>
+          </div>
+
+        </div>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img
+            th:src="@{assets/images/Ostalo/slide-photo-1.jpeg}"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+            th:src="@{assets/images/Ostalo/slide-photo-2.jpeg}"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+            th:src="@{assets/images/Ostalo/slide-photo-3.jpg}"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h3 class="page-title d-flex">Content</h3>
+      <div class="text-container">
+        <p class="text-main-page">
+          U svet Gaia studija, mesta na kom stvaramo magiju. Gaia je naša
+          Boginja Majka zemlja, a studio je mesto za kreiranje. Na našem sajtu
+          ćete naći biljne vezice, sveće sa namerom i druge proizvode koji vam
+          pomažu u vašoj spiritualnoj praksi. Pogledajte ponudu u našem shop-u.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-footer d-flex">
+        <div class="footer-box">
+          <div class="f-right w-350">
+            <p class="footer-text-mid">
+              Ukoliko imate bilo kakvih pitanja ili Vam treba savet, slobodno nas kontaktirajte.
+            </p>
+            <br />
+            <p>gaiastudio.rs@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-box">
+          <div class="f-left w-350">
+            <p>Zapratite nas</p>
+            <a href="https://www.facebook.com/gaiastudio.rs"><img th:src="@{/assets/images/facebook-square-brands.png}" alt="" /></a>
+            <a href="https://www.instagram.com/gaiastudio.rs/" ><img th:src="@{/assets/images/instagram-brands.png}" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script th:src="@{/assets/js/jquery-3.5.1.min.js}"></script>
+    <script th:src="@{/assets/js/main.js}"></script>
+  </body>
 </html>

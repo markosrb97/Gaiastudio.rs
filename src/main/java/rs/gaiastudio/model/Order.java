@@ -5,10 +5,31 @@ import java.util.List;
 
 public class Order {
 	private Customer customer;
-	private List<Candle> candles;
-	
+	private List<CartItem> candles;
+  
+        
+        public Order(){
+            
+        }
+            public Order(Customer customer) {
+            this.customer = customer;
+	}
+        
+        public Customer getCustomer(){
+            return customer;
+        }
+        
+        public void setCustomer(Customer customer){
+            this.customer = customer;
+        }
+        
+        public void setCandles(List<CartItem> candles){
+            this.candles = candles;
+        }
+	/*
 	public Order(Customer customer) {
 		this.customer = customer;
+		candles = new LinkedList<Candle>();
 	}
 	
 	public Order(Customer customer, Candle candle) {
@@ -17,9 +38,16 @@ public class Order {
 		candles.add(candle);
 	}
 	
-	public String getCustomerInfo() {
-		return this.customer.toString();
+	public void addCandle(Candle candle) {
+		candles.add(candle);
 	}
-	
+	*/
+	public String toString() {
+		String candleInfo = "";
+		for(int i = 0; i < candles.size(); i++) {
+			candleInfo += candles.get(i).toString();
+		}
+		return customer.toString() + "\n" + candleInfo;
+	}
 	
 }
