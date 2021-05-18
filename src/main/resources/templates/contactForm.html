@@ -73,29 +73,32 @@
                             </div>
                         </div>
                         <div class="right">
-                            <form th:action="@{/contact}" method="POST" th:object="${contact}">
-                                <div class="ime-i-email">
+                           <form id="contact-form" th:action="@{/contact}" method="post" th:object="${contact}">
+                              <div class="ime-i-email">
                                   <!-- ako su obavezna polja prazna -> nemoj da saljes -->
                                     <div class="ime">
-                                        <label>VAŠE IME<sup>*</sup></label>
-                                        <input type="text" th:field="*{name}">
+                                        <label>VAŠE IME<sup>*</sup></label> 
+                                        <div class="name-error"></div>
+                                        <input id="name" type="text" th:field="*{name}">
                                     </div> 
                                     <div class="email"> 
                                         <label>EMAIL<sup>*</sup></label>
-                                        <input type="text" th:field="*{email}">
+                                        <div class="email-error"></div>
+                                        <input id="email" type="text" th:field="*{email}">
                                     </div>
                                 </div>
                                 <div class="tema">
                                     <label>TEMA</label>
-                                    <input type="text" th:field="*{subject}">
+                                    <input id="subject" type="text" th:field="*{subject}">
                                 </div>
                                 <div class="poruka">
                                     <label>PORUKA<sup>*</sup></label>
-                                    <textarea class="polje" maxlength="1000" oninput="maxWords()" th:field="*{message}"></textarea>
-                                    <p>Preostalo vam je još <span class="broj-reci">1000</span> karaktera.</p>
-                                    <input class="posalji" type="submit" value="POŠALJI">
+                                    <div class="message-error"></div>
+                                    <textarea id="message" class="polje" maxlength="1000" oninput="maxWords()" th:field="*{message}"></textarea>
+                                    <p class="broj-reci-p"> Preostalo vam je još <span class="broj-reci">1000</span> karaktera.</p>
+                                    <input class="posalji" type="submit" id="button" disabled value="POŠALJI">
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="6LcEwrYaAAAAALdyhafWqPFvmnV106JtFCqu_lpU"></div>
+                                <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcEwrYaAAAAALdyhafWqPFvmnV106JtFCqu_lpU"></div>
                             </form>
                         </div>
                     </div>

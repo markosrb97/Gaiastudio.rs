@@ -123,8 +123,21 @@ form label {
   font-size: 13px;
   font-weight: 400;
   margin-bottom: 5px;
-  display: block;
+  display: inline;
 }
+
+.name-error, 
+.email-error, 
+.message-error{
+  text-align: right;
+  float: right;
+  color: red;
+ }
+
+ .input-error {
+   border: 1px solid red !important;
+ }
+
 
 form input {
   margin-bottom: 20px;
@@ -135,6 +148,7 @@ form input {
   font-size: 15px;
   width: 250px;
   box-sizing: border-box;
+  display: block;
 }
 
 form input:focus,
@@ -212,8 +226,8 @@ form textarea {
   word-wrap: break-word;
 }
 
-.poruka p,
-.broj-reci {
+.broj-reci,
+.broj-reci-p {
   font-family: 'Playfair Display', serif;
   color: #87807c;
 }
