@@ -85,14 +85,25 @@ header {
   transition: 0.2s;
 }
 
+.input-error{
+  border: 1px solid red !important;
+}
+
 .ime,
 .prezime {
   width: 47%;
 }
 
 .ulica,
-.broj-tel {
+.broj-tel,
+.email
+ {
   width: 100%;
+}
+
+.email-error{
+  color: red;
+  font-family: 'Playfair Display', serif;
 }
 
 .grad {
@@ -263,6 +274,19 @@ header {
 
 .dostava-napomena p::first-line {
   text-indent: -6px;
+}
+
+.msg{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.error-msg {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: red;
 }
 
 .poruka,
