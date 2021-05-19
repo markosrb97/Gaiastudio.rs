@@ -68,6 +68,7 @@
   /* height: 100%; */
   background: white;
   padding: 25px;
+  margin-bottom: 150px;
 }
 
 .basket {
@@ -197,13 +198,13 @@ td {
 
 @media only screen and (min-width: 2560px) {
   .body-style {
-    height: 1440px;
+    height: 1250px;
   }
 }
 
 @media only screen and (min-width: 3840px) {
   .body-style {
-    height: 2160px;
+    height: 2000px;
   }
 }
 

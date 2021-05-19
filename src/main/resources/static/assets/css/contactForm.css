@@ -232,6 +232,24 @@ form textarea {
   color: #87807c;
 }
 
+@media only screen and (min-width: 1920px) {
+  .body-style {
+    height: 1000px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .body-style {
+    height: 1250px;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  .body-style {
+    height: 2000px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
 
   .body-style {
